@@ -1,0 +1,12 @@
+{
+    "category": [
+      { "id": 1, "title": "Mens"},
+      { "id": 2, "title": "Womens"},
+      { "id": 3, "title": "Kids"}
+    ],
+    "brand": [
+      { "id": 1, "title": "Ginger"},
+      { "id": 2, "title": "Nike"},
+      { "id": 3, "title": "Lakme"}
+    ]
+  }
