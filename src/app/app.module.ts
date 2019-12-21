@@ -11,13 +11,15 @@ import { RightComponent } from './right/right.component';
 import { LeftComponent } from './left/left.component';
 
 import {RouterModule} from '@angular/router';
-import { HomeSliderComponent } from './home-slider/home-slider.component';
+import {HomeSliderComponent } from './home-slider/home-slider.component';
 import{HttpClientModule} from '@angular/common/http';
+import {FiltercatComponent } from './filtercat/filtercat.component';
 
 const routerlink = [
   {path:'', component:HomeComponent},
   {path:'cart', component:CartComponent},
-  {path:'login', component:LoginComponent}
+  {path:'login', component:LoginComponent},
+  {path:'catwisepro/:urlCatId', component:FiltercatComponent}
 ]
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ const routerlink = [
     LoginComponent,
     RightComponent,
     LeftComponent,
-    HomeSliderComponent
+    HomeSliderComponent,
+    FiltercatComponent
   ],
   imports: [
     BrowserModule,
