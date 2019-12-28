@@ -14,11 +14,18 @@ import {RouterModule} from '@angular/router';
 import {HomeSliderComponent } from './home-slider/home-slider.component';
 import{HttpClientModule} from '@angular/common/http';
 import {FiltercatComponent } from './filtercat/filtercat.component';
+import { LogoutComponent } from './logout/logout.component';
+import { PasswordComponent } from './password/password.component';
+import { Guard1Guard } from './guard1.guard';
+import { Guard2Guard } from './guard2.guard';
 
 const routerlink = [
   {path:'', component:HomeComponent},
   {path:'cart', component:CartComponent},
-  {path:'login', component:LoginComponent},
+  {path:'login', component:LoginComponent, canActivate:[Guard1Guard]},
+  {path:'password', component:PasswordComponent, canActivate:[Guard2Guard]},
+  {path:'logout', component:LogoutComponent, canActivate:[Guard2Guard]},
+ 
   {path:'catwisepro/:urlCatId', component:FiltercatComponent}
 ]
 @NgModule({
@@ -32,7 +39,9 @@ const routerlink = [
     RightComponent,
     LeftComponent,
     HomeSliderComponent,
-    FiltercatComponent
+    FiltercatComponent,
+    LogoutComponent,
+    PasswordComponent
   ],
   imports: [
     BrowserModule,

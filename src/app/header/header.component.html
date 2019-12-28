@@ -60,9 +60,11 @@
           <div class="col-md-8 clearfix">
             <div class="shop-menu clearfix pull-right">
               <ul class="nav navbar-nav">
-                
+                <li><a routerLink=""><i class="fa fa-home"></i> Home</a></li>
                 <li><a routerLink="cart"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-                <li><a routerLink="login"><i class="fa fa-lock"></i> Login</a></li>
+                <li *ngIf="myvar1"><a routerLink="login"><i class="fa fa-lock"></i> Login</a></li>
+                <li *ngIf="myvar2"><a routerLink="password"><i class="fa fa-lock"></i> Password</a></li>
+                <li *ngIf="myvar2"><a routerLink="logout"><i class="fa fa-lock"></i> Logout({{username}})</a></li>
               </ul>
             </div>
           </div>
