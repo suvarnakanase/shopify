@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
+import { DatatransferService } from '../datatransfer.service';
 
 @Component({
   selector: 'app-logout',
@@ -9,11 +10,14 @@ import { Router } from '@angular/router';
 })
 export class LogoutComponent implements OnInit {
 
-  constructor(private auth: AuthService , private rou: Router) { }
+  constructor(private auth: AuthService , private rou: Router, private ds: DatatransferService) { }
 
   ngOnInit() {
     this.auth.removeval();
     this.rou.navigate(['/login']);
+
+    this.ds.changemenu({status:0});
+
   }
 
 }

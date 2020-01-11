@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {CrudServiceService} from '../crud-service.service';
+import { DatatransferService } from '../datatransfer.service';
 @Component({
   selector: 'app-left',
   templateUrl: './left.component.html',
@@ -8,7 +9,7 @@ import {CrudServiceService} from '../crud-service.service';
 export class LeftComponent implements OnInit {
   public catData:any;
   public brandData:any;
-  constructor(public myserv1 :CrudServiceService) {}
+  constructor(public myserv1 :CrudServiceService, private ds: DatatransferService) {}
 
   ngOnInit() {
     this.myserv1.myfunction("category").subscribe(
@@ -27,6 +28,13 @@ export class LeftComponent implements OnInit {
       },//response
       (err)=>{console.log(err)}//error
     )
+  }
+
+  filter_brand(id, ev){
+    ev.preventDefault();
+   // alert(id);
+    //this.ds.broadcastbrand({})
+    this.ds.broadcastbrand({brandId:id});
   }
 
 }
