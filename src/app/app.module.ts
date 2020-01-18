@@ -19,6 +19,8 @@ import { PasswordComponent } from './password/password.component';
 import { Guard1Guard } from './guard1.guard';
 import { Guard2Guard } from './guard2.guard';
 
+import {ReactiveFormsModule, FormsModule} from '@angular/forms';
+
 const routerlink = [
   {path:'', component:HomeComponent},
   {path:'cart', component:CartComponent},
@@ -46,7 +48,9 @@ const routerlink = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(routerlink),
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
