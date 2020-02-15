@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import {AuthService} from '../auth.service';
 import { DatatransferService } from '../datatransfer.service';
+import { CookieService } from 'ngx-cookie-service';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -10,7 +12,8 @@ export class HeaderComponent implements OnInit {
   myvar1:boolean = true;
   myvar2:boolean = false;
   username:string ="";
-  constructor(private auth: AuthService, private ds: DatatransferService) { }
+  public header_cart_count: any = 0;
+  constructor(private auth: AuthService, private ds: DatatransferService, @Inject(CookieService) private cookieData:CookieService) { }
 
   ngOnInit() {
     let ans_auth = this.auth.isLoggedIn();
@@ -33,6 +36,27 @@ export class HeaderComponent implements OnInit {
         }
       }
     )
+
+    
+    this.ds.obj_subjectClass_for_cart.subscribe(
+      (res)=>{
+        console.log("Header Cart Count");
+        console.log(res);
+        this.header_cart_count = res['total_count_cart'];
+      },
+      ()=>{}
+    )
+
+
+    let ans_cart = this.cookieData.get("productId");
+    if(ans_cart == ""){
+      this.header_cart_count = 0;
+    }
+    else{
+      console.log(ans_cart);
+      let arr = ans_cart.split("#");
+      this.header_cart_count = arr.length;
+    }
     
   }
 

@@ -23,4 +23,11 @@ export class DatatransferService {
     //console.log(this.obj_subjectClass);
     this.obj_subjectClass.next(obj);
   }
+
+
+  public obj_subjectClass_for_cart = new Subject();
+  cart_count_method(obj){
+    this.obj_subjectClass_for_cart.next(obj);
+  }
+
 }

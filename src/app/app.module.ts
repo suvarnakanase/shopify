@@ -20,6 +20,7 @@ import { Guard1Guard } from './guard1.guard';
 import { Guard2Guard } from './guard2.guard';
 
 import {ReactiveFormsModule, FormsModule} from '@angular/forms';
+import { CookieService } from 'ngx-cookie-service';
 
 const routerlink = [
   {path:'', component:HomeComponent},
@@ -52,7 +53,7 @@ const routerlink = [
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

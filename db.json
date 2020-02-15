@@ -13,6 +13,6 @@
       {"id":1, "title":"product 1", "price": 1000, "pcait":1 , "pbrid": 2, "path":"gallery1.jpg"},
       {"id":2, "title":"product 2", "price": 2000, "pcait":1 , "pbrid": 2, "path":"gallery2.jpg"},
       {"id":3, "title":"product 3", "price": 3000, "pcait":2 , "pbrid": 1, "path":"gallery3.jpg"},
-      {"id":1, "title":"product 4", "price": 4000, "pcait":3 , "pbrid": 3, "path":"gallery4.jpg"}
+      {"id":4, "title":"product 4", "price": 4000, "pcait":3 , "pbrid": 3, "path":"gallery4.jpg"}
     ]
   }
