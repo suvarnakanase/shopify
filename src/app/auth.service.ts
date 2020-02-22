@@ -28,4 +28,8 @@ export class AuthService {
      localStorage.removeItem("name");
      return false;
    }
+
+   setval(val){
+    localStorage.setItem("name", val);
+   }
 }

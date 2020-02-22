@@ -12,4 +12,8 @@ export class CrudServiceService {
   myfunction(abc){
     return this.httpser.get(this.myurl + abc);
   }
+
+  add(userRecord, keyName){
+   return this.httpser.post(this.myurl+keyName, userRecord);
+  }
 }

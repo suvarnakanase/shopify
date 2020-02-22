@@ -34,6 +34,10 @@ export class HeaderComponent implements OnInit {
           this.myvar1 = true;
           this.myvar2 = false;
         }
+        else{
+          this.myvar1 = false;
+          this.myvar2 = true;
+        }
       }
     )
 

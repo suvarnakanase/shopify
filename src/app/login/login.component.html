@@ -4,15 +4,37 @@
             <div class="col-sm-4 col-sm-offset-1">
                 <div class="login-form"><!--login form-->
                     <h2>Login to your account</h2>
-                    <form action="#">
-                        <input type="text" placeholder="Name" />
-                        <input type="email" placeholder="Email Address" />
-                        <span>
-                            <input type="checkbox" class="checkbox"> 
-                            Keep me signed in
-                        </span>
-                        <button type="submit" class="btn btn-default">Login</button>
+                    <form action="#" [formGroup]='loginForm' (ngSubmit)="login_action(loginForm)">
+                        
+                       
+                        <input type="email" placeholder="Email Address" formControlName="email"/>
+                        <div *ngIf="loginForm.controls['email'].touched && !loginForm.controls['email'].valid">  
+                            <span *ngIf="loginForm.controls['email'].hasError('required') ">  
+                                email is required  
+                                </span>  
+                                <span *ngIf="loginForm.controls['email'].hasError('email') ">  
+                                 email patter invalid 
+                                </span>  
+                            
+                        </div> 
+                        <input type="password" placeholder="Password" formControlName="password"/>
+                        <div *ngIf="loginForm.controls['password'].touched && !loginForm.controls['password'].valid">  
+                            <span *ngIf="loginForm.controls['password'].hasError('required') ">  
+                                Password is required  
+                                </span>  
+                                <span *ngIf="loginForm.controls['password'].hasError('minlength') ">  
+                                 Min length is 4  
+                                </span>  
+                                <span *ngIf="loginForm.controls['password'].hasError('maxlength') ">  
+                                    Max length is 20  
+                                   </span>  
+                            
+                        </div> 
+                        
+                        <button type="submit" class="btn" [disabled]="!loginForm.valid">Login</button>
                     </form>
+                    {{loginForm.valid}}
+                    {{loginmsg}}
                 </div><!--/login form-->
             </div>
             <div class="col-sm-1">
@@ -82,6 +104,8 @@
                         </div> 
                         <button type="submit" class="btn" [disabled]="!signupForm.valid">Signup</button>
                     </form>
+                    {{signupForm.valid}}
+                    {{regmsg}}
                 </div><!--/sign up form-->
             </div>
         </div>
