@@ -57,6 +57,14 @@ export class LoginComponent implements OnInit {
             console.log(res[key]);
 
             if(res[key]['email'] == textemail && res[key]['password'] == textpass){
+
+              var obj_store = {
+                uname: res[key]['name'],
+                umobile: res[key]['mobile'],
+                uemail: res[key]['email'],
+                uid: res[key]['id']
+              }
+
               count++;
             }
           }
@@ -65,6 +73,7 @@ export class LoginComponent implements OnInit {
           if(count>0){
             //this.loginmsg = "Login successfully";
             this.authdata.setval(textemail);
+            this.authdata.setuserDetails(obj_store);
             this.ds.changemenu({status:1});
             this.router.navigate(['/']);
           }

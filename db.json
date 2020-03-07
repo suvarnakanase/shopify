@@ -63,11 +63,11 @@
   ],
   "userDetails": [
     {
-      "id": 1,
-      "email": "kanase@gmail.com",
-      "mobile": "8082068141",
       "name": "suvi",
-      "password": "qqqq"
+      "mobile": "8082068141",
+      "email": "kanase@gmail.com",
+      "password": "ssss",
+      "id": 1
     },
     {
       "name": "suvviiii",
@@ -94,7 +94,7 @@
       "name": "ssss",
       "mobile": "8888888888",
       "email": "su@gmail.com",
-      "password": "2222",
+      "password": "5555",
       "id": 5
     },
     {

@@ -32,4 +32,24 @@ export class AuthService {
    setval(val){
     localStorage.setItem("name", val);
    }
+
+   setuserDetails(obj){
+    localStorage.setItem("uname", obj.uname);
+    localStorage.setItem("umobile", obj.umobile);
+    localStorage.setItem("uid", obj.uid);
+   }
+
+
+   getAllVal(){
+     return {
+       name:localStorage.getItem("uname"),
+       mobile:localStorage.getItem("umobile"),
+       email:localStorage.getItem("name"),
+     }
+   }
+
+
+   getUserId(){
+     return localStorage.getItem("uid");
+   }
 }

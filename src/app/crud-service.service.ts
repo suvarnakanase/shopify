@@ -16,4 +16,10 @@ export class CrudServiceService {
   add(userRecord, keyName){
    return this.httpser.post(this.myurl+keyName, userRecord);
   }
+
+  update(userRecord, tablename, id){
+    //http://localhost:3000/userDetails/2
+    return this.httpser.put(this.myurl + tablename + "/" + id, userRecord);
+  }
+
 }
