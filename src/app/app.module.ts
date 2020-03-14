@@ -21,6 +21,8 @@ import { Guard2Guard } from './guard2.guard';
 
 import {ReactiveFormsModule, FormsModule} from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
 
 const routerlink = [
   {path:'', component:HomeComponent},
@@ -28,6 +30,7 @@ const routerlink = [
   {path:'login', component:LoginComponent, canActivate:[Guard1Guard]},
   {path:'password', component:PasswordComponent, canActivate:[Guard2Guard]},
   {path:'logout', component:LogoutComponent, canActivate:[Guard2Guard]},
+  {path:'parentC', component:ParentComponent},
  
   {path:'catwisepro/:urlCatId', component:FiltercatComponent}
 ]
@@ -44,7 +47,9 @@ const routerlink = [
     HomeSliderComponent,
     FiltercatComponent,
     LogoutComponent,
-    PasswordComponent
+    PasswordComponent,
+    ParentComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,9 @@
+<h1>Parent Component</h1>
+
+<input type="text" (keyup)="0" #parentData >
+
+<p>data from  child : {{finalAns}}</p>
+
+<hr>
+
+<app-child [varChild]="parentData.value" (myEve)="finalAns = $event"></app-child>

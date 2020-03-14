@@ -4,6 +4,7 @@ import {FormGroup,FormControl,FormBuilder, Validators} from '@angular/forms' ;
 import { CrudServiceService } from '../crud-service.service';
 import { Router } from '@angular/router';
 import { DatatransferService } from '../datatransfer.service';
+import { MustMatch } from '../checkpass';
 
 @Component({
   selector: 'app-login',
@@ -23,7 +24,11 @@ export class LoginComponent implements OnInit {
       email:['', [Validators.required, Validators.email]],
       password:['', [Validators.required, Validators.minLength(4), Validators.maxLength(12)] ],
       cpassword:['', [Validators.required, Validators.minLength(4), Validators.maxLength(12)] ]
-    });
+    },
+      {
+        validator : MustMatch('password', 'cpassword')
+      }
+    );
 
     this.loginForm = this.frmbuilder.group({
       email:['', [Validators.required, Validators.email]],

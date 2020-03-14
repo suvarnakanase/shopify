@@ -29,6 +29,7 @@
                                     Max length is 20  
                                    </span>  
                             
+                                   
                         </div> 
                         
                         <button type="submit" class="btn" [disabled]="!loginForm.valid">Login</button>
@@ -100,6 +101,12 @@
                                 <span *ngIf="signupForm.controls['cpassword'].hasError('maxlength') ">  
                                     Max length is 20  
                                    </span>  
+
+
+                                   <span *ngIf="signupForm.controls['cpassword'].hasError('passMatch') ">  
+                                    Invalid confirm password;
+                                   </span>  
+                            
                             
                         </div> 
                         <button type="submit" class="btn" [disabled]="!signupForm.valid">Signup</button>
